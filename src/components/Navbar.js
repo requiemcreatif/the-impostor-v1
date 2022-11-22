@@ -1,7 +1,8 @@
 import {Link} from "react-router-dom"
 import styled from "styled-components"
+import logo from "../img/Logo.svg"
 
-import React from 'react'
+
 
 const Nav = styled.nav`
     display: flex;
@@ -50,6 +51,7 @@ cursor: pointer;
 const Navbar = () => {
   return (
     <Nav className="navbar">
+        <img src={ logo} alt="logo impostr" className="impostr-logo" />
         <ul>
             <li className="title">Impostr</li>
             <li><Link to="/Login"><Btn1>Login</Btn1></Link></li>
