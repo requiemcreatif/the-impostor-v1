@@ -1,4 +1,6 @@
 import {Link} from "react-router-dom"
+import { useLogout } from "../hooks/useLogout"
+import { useAuthContext } from "../hooks/useAuthContext"
 import styled from "styled-components"
 import logo from "../img/Logo.svg"
 
@@ -52,12 +54,28 @@ cursor: pointer;
 }`
 
 const Navbar = () => {
+    const { logout } = useLogout()
+    const { user } = useAuthContext()
+
+
+
   return (
     <Nav className="navbar">
         <img src={ logo} alt="logo impostr" className="impostr-logo" />
         <ul>
-            <li><Link to="/Login"><Btn1>Login</Btn1></Link></li>
-            <li><Link to="/Signup"><Btn2>Signup</Btn2></Link></li>
+            {!user && (
+                <>
+                <li><Link to="/Login"><Btn1>Login</Btn1></Link></li>
+                <li><Link to="/Signup"><Btn2>Signup</Btn2></Link></li>
+                </> 
+            )}
+            {user && (
+                <>
+                <li>Hi, {user.displayName}</li>
+                <li><Link to="/"><Btn1 onClick={logout}>Logout</Btn1></Link></li>
+                </>
+                
+            )}
         </ul>
     </Nav>
   )

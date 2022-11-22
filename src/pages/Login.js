@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useLogin } from '../hooks/useLogin'
 import styled from 'styled-components'
 
 
@@ -49,12 +50,14 @@ const Btn1 = styled.button`
 
 
 const Login = () => {
-const [mail, setMail] = useState("")
+const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
+const { login, error, isPending } = useLogin()
 
 function handleSubmit(e) {
     e.preventDefault()
-    console.log(mail, password);
+    login(email, password)
+    //console.log(email, password);
 }
 
   return (
@@ -64,8 +67,8 @@ function handleSubmit(e) {
         <span>Email:</span>
         <input 
         type="email" 
-        onChange={(e) => setMail(e.target.value)}
-        value={mail}
+        onChange={(e) => setEmail(e.target.value)}
+        value={email}
         />
       </label>
       <label>
@@ -76,7 +79,9 @@ function handleSubmit(e) {
         value={password}
         />
       </label>
-      <Btn1>Login</Btn1>
+      {!isPending && <Btn1>Login</Btn1>}
+      {isPending && <Btn1 disabled>Logging in...</Btn1>}
+      {error && <p>{error}</p>}
     </Form>
   )
 }

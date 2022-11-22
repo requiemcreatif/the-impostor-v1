@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useSignup } from '../hooks/useSignup'
 import styled from 'styled-components'
 
 const Form = styled.form`
@@ -49,15 +50,17 @@ const Btn1 = styled.button`
 
 const Signup = () => {
 
-    const [mail, setMail] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [name, setName] = useState("")
+    const [displayName, setDisplayName] = useState("")
+    const { signup, isPending, error } = useSignup()
    
 
 
 function handleSubmit(e) {
     e.preventDefault()
-    console.log(mail, password);
+    //console.log(email, password);
+    signup(email, password, displayName)
 }
 
   return (
@@ -67,8 +70,8 @@ function handleSubmit(e) {
         <span>Email:</span>
         <input 
         type="email" 
-        onChange={(e) => setMail(e.target.value)}
-        value={mail}
+        onChange={(e) => setEmail(e.target.value)}
+        value={email}
         />
       </label>
       <label>
@@ -83,11 +86,14 @@ function handleSubmit(e) {
         <span>Name:</span>
         <input
         type="text"
-        onChange={(e) => setName(e.target.value)}
-        value={name}
+        onChange={(e) => setDisplayName(e.target.value)}
+        value={displayName}
         />
         </label>
-      <Btn1>Sign up</Btn1>
+        {!isPending && <Btn1>Sign up</Btn1>}
+        {isPending && <Btn1 disabled>Signing up...</Btn1>}
+        {error && <div>{error}</div>}
+        
     </Form>
   )
 }
