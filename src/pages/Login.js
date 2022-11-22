@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 
 const Form = styled.form`
+background: white;
     margin: 6rem auto;
     width: 40rem;
     padding: 2rem;
@@ -29,6 +30,24 @@ const Form = styled.form`
     }
 `
 
+const Btn1 = styled.button`
+        margin-top: 2rem;
+        width: 10rem;
+        padding: 0.5rem 1rem;
+        border: solid 1px #053651;
+        border-radius: 0.5rem;
+        background: transparent;
+        color: #053651;
+        font-weight: 300;
+        cursor: pointer;
+        &:hover {
+            background: #2998D5;
+            color: #101B21;
+            border: #2998D5 solid 1px;
+                
+    }`
+
+
 const Login = () => {
 const [mail, setMail] = useState("")
 const [password, setPassword] = useState("")
@@ -42,7 +61,7 @@ function handleSubmit(e) {
     <Form onSubmit={handleSubmit}>
       <h2>Login</h2>
       <label>
-        <span>email:</span>
+        <span>Email:</span>
         <input 
         type="email" 
         onChange={(e) => setMail(e.target.value)}
@@ -50,14 +69,14 @@ function handleSubmit(e) {
         />
       </label>
       <label>
-        <span>password:</span>
+        <span>Password:</span>
         <input 
         type="password" 
         onChange={(e) => setPassword(e.target.value)}
         value={password}
         />
       </label>
-      <button>Login</button>
+      <Btn1>Login</Btn1>
     </Form>
   )
 }

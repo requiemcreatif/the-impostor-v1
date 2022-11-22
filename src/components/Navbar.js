@@ -6,9 +6,10 @@ import logo from "../img/Logo.svg"
 
 const Nav = styled.nav`
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 2rem 2rem;
+    justify-content: space-between;
+    //align-items: center;
+    padding: 2rem 6rem;
+    gap: 5rem;
     background: #101B21;
     box-shadow: 0 0 1rem #ccc;
     ul {
@@ -21,6 +22,7 @@ const Nav = styled.nav`
 }
 `
 const Btn1 = styled.button`
+        width: 8rem;
         padding: 0.5rem 1rem;
         border: solid 1px #CDF72B;
         border-radius: 0.5rem;
@@ -35,6 +37,7 @@ const Btn1 = styled.button`
     }`
 
 const Btn2 = styled.button`
+width: 8rem;
 padding: 0.5rem 1rem;
 border: solid 1px #CDF72B;
 border-radius: 0.5rem;
@@ -53,7 +56,6 @@ const Navbar = () => {
     <Nav className="navbar">
         <img src={ logo} alt="logo impostr" className="impostr-logo" />
         <ul>
-            <li className="title">Impostr</li>
             <li><Link to="/Login"><Btn1>Login</Btn1></Link></li>
             <li><Link to="/Signup"><Btn2>Signup</Btn2></Link></li>
         </ul>
