@@ -9,8 +9,8 @@ import logo from "../img/Logo.svg"
 const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
-    //align-items: center;
-    padding: 2rem 6rem;
+    align-items: center;
+    padding: 2rem 2rem;
     gap: 5rem;
     background: #101B21;
     box-shadow: 0 0 1rem #ccc;
@@ -18,11 +18,18 @@ const Nav = styled.nav`
         display: flex;
         list-style: none;
         li {
-            margin-left: 2rem;
+            //margin-left: 2rem;
             //login button
     }
+    // move ul to the right
+     
+
 }
 `
+// move ul to the right
+
+
+
 const Btn1 = styled.button`
         width: 8rem;
         padding: 0.5rem 1rem;
@@ -61,8 +68,16 @@ const Navbar = () => {
 
   return (
     <Nav className="navbar">
-        <img src={ logo} alt="logo impostr" className="impostr-logo" />
+        {/* <img src={ logo} alt="logo impostr" className="impostr-logo" /> */}
+        {/* <h1>IMPOSTR</h1> */}
         <ul>
+        <li>
+                <img src={ logo} alt="logo impostr" className="impostr-logo" />
+                {/* <h1>IMPOSTR</h1> */}
+            </li>
+        </ul>
+        <ul>
+         
             {!user && (
                 <>
                 <li><Link to="/Login"><Btn1>Login</Btn1></Link></li>
