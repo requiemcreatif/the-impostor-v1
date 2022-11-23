@@ -3,10 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body {
-    font-family: "Blinker", sans-serif;
+    
     font-size: 1.6rem;
     max-width: 1500px;
     margin: 0 auto;
+  }
+
+  p, h2, h3, h4, h5, h6 {
+    font-family: "Blinker", sans-serif;
+  }
+
+  h1 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 3.5rem;
   }
 
 *{

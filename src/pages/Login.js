@@ -63,15 +63,7 @@ function handleSubmit(e) {
     //console.log(email, password);
 }
 
-// async function handleSubmit(e){
-//   e.preventDefault()
-//   try {
-//     await login(email, password)
-//     navigate("/mainpage")
-//   } catch (error) {
 
-//   }
-// }
 
   return (
     <Form onSubmit={handleSubmit}>
