@@ -1,3 +1,4 @@
+import {useNavigate} from "react-router-dom"
 import { useState } from 'react'
 import { useLogin } from '../hooks/useLogin'
 import styled from 'styled-components'
@@ -53,12 +54,24 @@ const Login = () => {
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const { login, error, isPending } = useLogin()
+const navigate = useNavigate()
 
 function handleSubmit(e) {
     e.preventDefault()
     login(email, password)
+    navigate("/mainpage")
     //console.log(email, password);
 }
+
+// async function handleSubmit(e){
+//   e.preventDefault()
+//   try {
+//     await login(email, password)
+//     navigate("/mainpage")
+//   } catch (error) {
+
+//   }
+// }
 
   return (
     <Form onSubmit={handleSubmit}>
