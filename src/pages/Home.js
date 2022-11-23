@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import styled from "styled-components"
 import Description from "../components/Description"
 
@@ -14,11 +15,14 @@ const HomeDiv = styled.div`
 
 const Home = () => {
   return (
+    <>
     <HomeDiv>
       <Header />
       <Description />
-
     </HomeDiv>
+      <Footer />
+    </>
+    
     
   )
 }

@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 import styled from "styled-components";
 
 const HeaderStyled = styled.section`
@@ -40,15 +41,25 @@ const Btn = styled.button`
 }`
 
 const WrapperContainer = styled.div`
-    
-    
-
     @media (min-width: 768px) {
         max-width: 900px;
         padding: 0 10rem;
     }
     `
-
+const Btn2 = styled.button`
+width: 8rem;
+padding: 0.5rem 1rem;
+border: solid 1px #CDF72B;
+border-radius: 0.5rem;
+background: #CDF72B;
+color: #101B21;
+font-weight: 300;
+cursor: pointer;
+&:hover {
+    background: transparent;
+    
+    color: #E0F4FF;
+}`
 
 
 const Header = () => {
@@ -59,7 +70,7 @@ const Header = () => {
             <h2>Don't let <span style={{color: "#CDF72B"}} >Imposter syndrome</span>  stop you from fulling your potential</h2>
             <p>Don’t be afraid of failing. Lorem Ipsum is simply dummy text! Lorem ipsum.</p>
             
-            <Btn>Sign up</Btn>
+            <Link to="/Signup"><Btn2>Signup</Btn2></Link>
         </HeaderStyled>
   </WrapperContainer>
   )
