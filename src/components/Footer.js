@@ -11,25 +11,37 @@ const Btn = styled.button`
     color: #053651;
     font-weight: 300;
     cursor: pointer;
+
+   
     &:hover {
         background: transparent;
         color: #E0F4FF;
-        border: #CDF72B solid 1px;
+        border: #CDF72B solid 1px;      
 }`
 
 const FormContainer = styled.div`
     background: #64BBEB;
     padding: 6rem 1rem;
-    width: 1250px;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5rem;
     color: #E0F4FF;
 
-    @media (max-width: 768px) {
-        flex-direction: column;
+    p {
+        font-size: 1.5rem;
+        font-weight: 300;
+        padding: 0 2rem;
+    }
+
+    /* desktop media */
+    @media (min-width: 768px) {
+        
+        flex-direction: row;
         gap: 2rem;
+        align-items: center;
+        width: 1250px;
     }
 
 `
@@ -39,6 +51,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     color: #E0F4FF;
     gap: 2rem;
 
@@ -50,6 +63,19 @@ const Wrapper = styled.div`
      form {
             display: flex;
             gap: 1rem;
+            flex-direction: row;
+            align-items: center;
+
+            /* MOBILE VERSION */
+            @media (max-width: 768px) {
+                gap: 2rem;
+                flex-direction: column;
+
+                button {
+                    width: 100%;
+                }
+
+            }
             input {
                 border: #E0F4FF solid 1px;
                 border-radius: 0.5rem;
@@ -63,7 +89,7 @@ const Wrapper = styled.div`
             color: #E0F4FF;
             opacity: 1; 
         } 
-        }`
+    }`
 
 const Footer = () => {
 

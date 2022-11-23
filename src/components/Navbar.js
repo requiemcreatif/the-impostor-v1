@@ -10,12 +10,15 @@ const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 1rem;
-    gap: 1rem;
+    //flex-direction: column;
+    color: #E0F4FF;
+    padding: 2rem 2rem;
+    //gap: 1rem;
     background: #101B21;
     box-shadow: 0 0 1rem #ccc;
     ul {
         display: flex;
+        gap: 2rem;
         list-style: none;
 }
 `
@@ -73,18 +76,27 @@ const Navbar = () => {
 
   return (
     <Nav className="navbar">
-        {/* <img src={ logo} alt="logo impostr" className="impostr-logo" /> */}
+        <img src={ logo} alt="logo impostr" className="impostr-logo" />
         {/* <h1>IMPOSTR</h1> */}
-        <ul>
+        {/* <ul>
             <li>
                 <img src={ logo} alt="logo impostr" className="impostr-logo" />
-                {/* <h1>IMPOSTR</h1> */}
+    
             </li>
-        </ul>
+        </ul> */}
+        
         <ul>
+            {/* <li>
+                <img src={ logo} alt="logo impostr" className="impostr-logo" />
+            </li> */}
             <li>
-                <Link to="/"><BtnMenu>Home</BtnMenu></Link>
+                <Link to="/">Home</Link>
             </li>
+            {user && (
+                <li>
+                <Link to="/mainpage">Back</Link>
+                </li>               
+            )}
          
             {!user && (
                 <>
@@ -100,6 +112,7 @@ const Navbar = () => {
                 
             )}
         </ul>
+          
     </Nav>
   )
 }
