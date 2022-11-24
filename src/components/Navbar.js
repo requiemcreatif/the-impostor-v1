@@ -4,8 +4,6 @@ import { useAuthContext } from "../hooks/useAuthContext"
 import styled from "styled-components"
 import logo from "../img/Logo.svg"
 
-
-
 const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
@@ -27,7 +25,7 @@ const Btn1 = styled.button`
         width: 8rem;
         padding: 0.5rem 1rem;
         border: solid 1px #CDF72B;
-        border-radius: 0.5rem;
+        border-radius: 0.3rem;
         background: transparent;
         color: #E0F4FF;
         font-weight: 300;
@@ -42,7 +40,7 @@ const Btn2 = styled.button`
 width: 8rem;
 padding: 0.5rem 1rem;
 border: solid 1px #CDF72B;
-border-radius: 0.5rem;
+border-radius: 0.3rem;
 background: #CDF72B;
 color: #101B21;
 font-weight: 300;
@@ -53,20 +51,6 @@ cursor: pointer;
     color: #E0F4FF;
 }`
 
-const BtnMenu = styled.button`
-        width: 8rem;
-        padding: 0.5rem 1rem;
-        border: none;
-        //border-radius: 0.5rem;
-        background: transparent;
-        color: #E0F4FF;
-        font-weight: 300;
-        cursor: pointer;
-        &:hover {
-            //background: #CDF72B;
-            color: #CDF72B;
-                
-    }`
 
 const Navbar = () => {
     const { logout } = useLogout()

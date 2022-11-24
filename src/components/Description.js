@@ -38,10 +38,11 @@ const DivThree = styled.div`
     `
 // Description section
 const SectionTwo = styled.section`
-display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
 @media (max-width: 768px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     
 
     
@@ -94,7 +95,7 @@ const Description = () => {
                     <img src={iconTwo} alt="icon right" />
                     <h2>Who does this syndrome affect?</h2>
                 </TopSection>
-                <p>Impostor syndrome, also known as impostor phenomenon, is a psychological occurrence in which an individual doubts their skills, talents, or accomplishments and has a persistent internalized fear of being exposed as a "fraud".</p>    
+                <p>It’s estimated that 70% of people will experience at least one episode of imposter syndrome during their lifetime. You are not Alone!!</p>    
             </SectionWrapper>
         </SectionTwo>
     </Wrapper>

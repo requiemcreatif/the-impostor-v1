@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom"
+import { useAuthContext } from "../hooks/useAuthContext";
 import styled from "styled-components";
 
 const HeaderStyled = styled.section`
@@ -35,7 +36,7 @@ height: 4rem;
 font-size: 1.8rem;
 padding: 0.5rem 1rem;
 border: solid 1px #CDF72B;
-border-radius: 0.5rem;
+border-radius: 0.3rem;
 background: #CDF72B;
 color: #101B21;
 font-weight: 300;
@@ -48,14 +49,16 @@ cursor: pointer;
 
 
 const Header = () => {
+
+    const { user } = useAuthContext()
   return (
     <WrapperContainer>    
         <HeaderStyled>
             <h1>IMPOSTR</h1>
             <h2>Don't let <span style={{color: "#CDF72B"}} >Imposter syndrome</span>  stop you from fulling your potential</h2>
             <p>Don’t be afraid of failing. Lorem Ipsum is simply dummy text! Lorem ipsum.</p>
+            {!user && <Link to="/Signup"><Btn2>Signup</Btn2></Link>}
             
-            <Link to="/Signup"><Btn2>Signup</Btn2></Link>
         </HeaderStyled>
   </WrapperContainer>
   )

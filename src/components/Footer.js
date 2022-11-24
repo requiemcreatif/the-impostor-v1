@@ -6,7 +6,7 @@ const Btn = styled.button`
     height: 3.5rem;
     padding: 0.5rem 1rem;
     border: solid 1px #CDF72B;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     background: #CDF72B;
     color: #053651;
     font-weight: 300;
@@ -78,7 +78,7 @@ const Wrapper = styled.div`
             }
             input {
                 border: #E0F4FF solid 1px;
-                border-radius: 0.5rem;
+                border-radius: 0.3rem;
                 padding: 0.5rem 1rem;
                 margin-top: 20px;
                 width: 25rem;
