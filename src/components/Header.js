@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom"
 import { useAuthContext } from "../hooks/useAuthContext";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const HeaderStyled = styled.section`
@@ -9,14 +10,14 @@ const HeaderStyled = styled.section`
     display: flex;
     flex-direction: column;
     gap: 4rem;
-    justify-content: left;
+    justify-content: center;
     align-items: left;
     height: auto;
     h1 {
       padding-top: 5rem;
         font-size: 8rem;
         font-weight: 300;
-        color: #CDF72B;
+        //color: #CDF72B;
     }
 
     h2 {
@@ -26,9 +27,8 @@ const HeaderStyled = styled.section`
 `
 const WrapperContainer = styled.div`
     @media (min-width: 768px) {
+        margin: 0 auto;
         max-width: 900px;
-        
-        padding: 0 10rem;
     }
     `
 const Btn2 = styled.button`
@@ -43,8 +43,7 @@ color: #101B21;
 font-weight: 300;
 cursor: pointer;
 &:hover {
-    background: transparent;
-    
+    background: transparent;  
     color: #E0F4FF;
 }`
 
@@ -56,9 +55,15 @@ const Header = () => {
     <WrapperContainer>    
         <HeaderStyled>
             {/* <h1>IMPOSTR</h1> */}
-            <h2>Don't let <span style={{color: "#CDF72B"}} >Imposter syndrome</span>  stop you from fulling your potential</h2>
-            <p>Don’t be afraid of failing. Lorem Ipsum is simply dummy text! Lorem ipsum.</p>
-            {!user && <Link to="/Signup"><Btn2>Signup</Btn2></Link>}
+            <h1>Don't let <span style={{color: "#CDF72B"}} >Imposter syndrome</span>  stop you from fulling your potential</h1>
+            {/* <p>Don’t be afraid of failing. Lorem Ipsum is simply dummy text! Lorem ipsum.</p> */}
+            {!user && 
+                <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+            <Link to="/Signup"><Btn2>Signup</Btn2></Link>
+            </motion.div>}
             
         </HeaderStyled>
   </WrapperContainer>

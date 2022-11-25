@@ -66,9 +66,10 @@ const SectionWrapper = styled.div`
      p {
         text-align: left;
         padding-right: 5rem;
+        font-weight: 300;
      }
     `
-
+   
 
 const Description = () => {
   return (
@@ -94,7 +95,7 @@ const Description = () => {
                     <img src={iconTwo} alt="icon right" />
                     <h2>Who does this syndrome affect?</h2>
                 </TopSection>
-                <p>It’s estimated that 70% of people will experience at least one episode of imposter syndrome during their lifetime. You are not Alone!!</p>    
+                <p>Today, impostor syndrome can apply to anyone “who isn’t able to internalize and own their successes,”. It’s estimated that 70% of people will experience at least one episode of imposter syndrome during their lifetime. You are not Alone!!</p>    
             </SectionWrapper>
         </SectionTwo>
     </Wrapper>

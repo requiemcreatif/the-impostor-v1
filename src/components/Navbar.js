@@ -2,6 +2,7 @@ import {Link} from "react-router-dom"
 import { useLogout } from "../hooks/useLogout"
 import { useAuthContext } from "../hooks/useAuthContext"
 import styled from "styled-components"
+import { motion } from "framer-motion";
 import logo from "../img/Logo-v2.svg"
 
 const Nav = styled.nav`
@@ -20,8 +21,10 @@ const Nav = styled.nav`
     padding: 2rem 0;
     gap: 2rem;
     background: #053651;
-    background: #101B21;
+    //background: #101B21;
     //box-shadow: 0 0 1rem #ccc;
+    //shadow at the bottom
+    box-shadow: 0 0 0.5rem #101B21;
     ul {
         display: flex;
         gap: 4rem;
@@ -79,14 +82,15 @@ const Div2 = styled.div`
 const Navbar = () => {
     const { logout } = useLogout()
     const { user } = useAuthContext()
+    
 
   return (
     // <Nav className="navbar">
     <div>
     {user && (
-                <Div2>
-                    <div>Welcome back, {user.displayName}!</div> 
-                </Div2>
+            <Div2>
+                <div>Welcome back, {user.displayName}!</div> 
+            </Div2>
             )}
 
     <Nav>
@@ -101,22 +105,36 @@ const Navbar = () => {
                 </li>               
             )}
             {!user && (
-                <>
+            <>
+                <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+
+                
                     <li><Link to="/Login"><Btn1>Login</Btn1></Link></li>
+                 
+                    </motion.div>
+
+                    <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
                     <li><Link to="/Signup"><Btn2>Signup</Btn2></Link></li>
+                    </motion.div>
+
                 </> 
             )}
-            {/* {user && (
-                <>
-                    <li>Hi, {user.displayName}</li>
-                    <li><Link to="/"><Btn1 onClick={logout}>Logout</Btn1></Link></li>
-                </>
-            )} */}
         </ul>
         {user && (
                 <Div>
-                    {/* <div>Welcome back, {user.displayName}!</div> */}
-                    <Link to="/"><Btn1 onClick={logout}>Logout</Btn1></Link>
+                    <motion.div 
+                        whileHover={{ scale: 1.1 }} 
+                        whileTap={{ scale: 0.9 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
+                        <Link to="/"><Btn1 onClick={logout}>Logout</Btn1></Link>
+                    </motion.div>
                 </Div>
             )}
     </Nav>

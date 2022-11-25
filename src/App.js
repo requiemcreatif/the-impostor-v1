@@ -1,10 +1,11 @@
 import {BrowserRouter, Route, Routes, useNavigate, Navigate} from "react-router-dom"
 import { useAuthContext } from "./hooks/useAuthContext";
 import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
+//import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Mainpage from "./pages/Mainpage";
+import { motion } from "framer-motion";
 import './App.css';
 
 function App() {
@@ -15,8 +16,7 @@ function App() {
   return (
     <div className="App">
     {authIsReady && (
-    <BrowserRouter>
-      
+    <BrowserRouter>  
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>
@@ -25,6 +25,7 @@ function App() {
       </Routes>
     </BrowserRouter>
     )}
+    
     </div>
   );
 }
