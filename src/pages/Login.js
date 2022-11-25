@@ -1,6 +1,7 @@
 import {useNavigate} from "react-router-dom"
 import { useState } from 'react'
 import { useLogin } from '../hooks/useLogin'
+import Navbar from "../components/Navbar"
 import styled from 'styled-components'
 
 
@@ -49,6 +50,16 @@ const Btn1 = styled.button`
                 
     }`
 
+const NavWrapper = styled.div`
+position: fixed;
+width: 100%;
+right: 0;
+left: 0;
+z-index: 1;
+margin: 0 auto;
+max-width: 1500px ;
+`
+
 
 const Login = () => {
 const [email, setEmail] = useState("")
@@ -66,6 +77,10 @@ function handleSubmit(e) {
 
 
   return (
+    <div>
+         
+        <Navbar />
+        
     <Form onSubmit={handleSubmit}>
       <h2>Login</h2>
       <label>
@@ -88,6 +103,7 @@ function handleSubmit(e) {
       {isPending && <Btn1 disabled>Logging in...</Btn1>}
       {error && <p>{error}</p>}
     </Form>
+    </div>
   )
 }
 

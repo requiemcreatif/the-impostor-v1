@@ -1,4 +1,5 @@
 import Card from "../components/Card"
+import Navbar from "../components/Navbar"
 import styled from "styled-components"
 
 const CardContainer = styled.div`
@@ -16,13 +17,15 @@ const CardContainer = styled.div`
 
 const Mainpage = () => {
   return (
+    <>
+    <Navbar/>
     <CardContainer>
       <Card/>
       <Card/>
       <Card/>
       <Card/>
     </CardContainer>
-    
+    </>
   )
 }
 

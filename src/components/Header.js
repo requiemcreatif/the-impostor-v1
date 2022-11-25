@@ -5,7 +5,7 @@ import styled from "styled-components";
 const HeaderStyled = styled.section`
     //background: #053651;
     color: white;
-    padding: 2rem 0;
+    padding: 15rem 0 10rem 0;
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -27,6 +27,7 @@ const HeaderStyled = styled.section`
 const WrapperContainer = styled.div`
     @media (min-width: 768px) {
         max-width: 900px;
+        
         padding: 0 10rem;
     }
     `
@@ -54,7 +55,7 @@ const Header = () => {
   return (
     <WrapperContainer>    
         <HeaderStyled>
-            <h1>IMPOSTR</h1>
+            {/* <h1>IMPOSTR</h1> */}
             <h2>Don't let <span style={{color: "#CDF72B"}} >Imposter syndrome</span>  stop you from fulling your potential</h2>
             <p>Don’t be afraid of failing. Lorem Ipsum is simply dummy text! Lorem ipsum.</p>
             {!user && <Link to="/Signup"><Btn2>Signup</Btn2></Link>}

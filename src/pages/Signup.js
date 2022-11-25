@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useSignup } from '../hooks/useSignup'
+import Navbar from "../components/Navbar"
 import styled from 'styled-components'
 
 const Form = styled.form`
@@ -64,7 +65,9 @@ function handleSubmit(e) {
 }
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <div>
+        <Navbar />
+        <Form onSubmit={handleSubmit}>
       <h2>Sign up</h2>
       <label>
         <span>Email:</span>
@@ -95,6 +98,8 @@ function handleSubmit(e) {
         {error && <div>{error}</div>}
         
     </Form>
+    </div>
+    
   )
 }
 

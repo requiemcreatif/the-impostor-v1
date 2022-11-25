@@ -9,7 +9,7 @@ body {
     margin: 0 auto;
   }
 
-  p, h2, h3, h4, h5, h6 {
+  p, a, h2, h3, h4, h5, h6 {
     font-family: "Blinker", sans-serif;
   }
 
@@ -26,38 +26,10 @@ body {
 
 html {
 	font-size: 62.5%;
-    /* background-color: #000;  */
+    background-color: #ffffff;
 }
 
 .impostr-logo {
-    width: 80px
+    width: 100px
 }
 
-
-.navbar {
-    width: 100%;
-    background: #101B21;
-    padding: 20px 10px;
-
-  }
-
-  .navbar ul {
-    display: flex;
-    margin: 0 auto;
-    max-width: 960px;
-    align-items: center;
-  }
-
-  .navbar button, .navbar a {
-    margin-left: 16px;
-  }
-
-  .navbar li {
-    color: white;
-    text-decoration: none;
-    list-style: none;
-  }
-
-  .title {
-    color: aliceblue;
-  }

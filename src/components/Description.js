@@ -56,7 +56,6 @@ const TopSection = styled.div`
     h2 {
         font-size: 3rem;
     }
-
     `
 
 const SectionWrapper = styled.div`
