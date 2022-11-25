@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes, useNavigate, Navigate} from "react-router-dom"
+import {BrowserRouter, Route, Routes, useNavigate, Navigate, redirect} from "react-router-dom"
 import { useAuthContext } from "./hooks/useAuthContext";
 import Home from "./pages/Home";
 //import Navbar from "./components/Navbar";
@@ -13,6 +13,8 @@ function App() {
 
 
 
+
+
   return (
     <div className="App">
     {authIsReady && (
@@ -21,10 +23,11 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
-        <Route path="/mainpage" element={<Mainpage/>}/>
+        <Route path="/mainpage"  element={user ? <Mainpage/> : <Navigate to="/login"/>}/> 
       </Routes>
     </BrowserRouter>
     )}
+   
     
     </div>
   );

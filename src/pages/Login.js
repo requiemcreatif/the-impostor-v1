@@ -2,8 +2,9 @@ import {useNavigate} from "react-router-dom"
 import { useState } from 'react'
 import { useLogin } from '../hooks/useLogin'
 import Navbar from "../components/Navbar"
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
-
+import { useAuthContext } from "../hooks/useAuthContext"
 
 const Form = styled.form`
 background: white;
@@ -71,6 +72,7 @@ const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const { login, error, isPending } = useLogin()
 const navigate = useNavigate()
+const { user } = useAuthContext()
 
 function handleSubmit(e) {
     e.preventDefault()
@@ -96,6 +98,7 @@ function handleSubmit(e) {
         onChange={(e) => setEmail(e.target.value)}
         value={email}
         placeholder="Email"
+        required
         />
       </label>
       <label>
@@ -105,9 +108,18 @@ function handleSubmit(e) {
         onChange={(e) => setPassword(e.target.value)}
         value={password}
         placeholder="Password"
+        required
         />
       </label>
-      {!isPending && <Btn1>Login</Btn1>}
+      {!isPending && 
+        <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.5 }}
+          >
+      <Btn1>Login</Btn1>
+      </motion.div>
+      }
+      
       {isPending && <Btn1 disabled>Logging in...</Btn1>}
       {error && <p>{error}</p>}
     </Form>
