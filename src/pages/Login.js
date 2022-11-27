@@ -3,6 +3,8 @@ import {useNavigate} from "react-router-dom"
 import { useState } from 'react'
 import { useLogin } from '../hooks/useLogin'
 import Navbar from "../components/Navbar"
+import Sidecontent from "../components/Sidecontent";
+import Footer from "../components/Footer";
 //import { motion } from 'framer-motion/dist/framer-motion'
 import { motion } from "framer-motion";
 import styled from 'styled-components'
@@ -10,7 +12,7 @@ import styled from 'styled-components'
 
 const Form = styled.form`
 background: white;
-    margin: 6rem auto;
+    margin: 10rem auto;
     width: 40rem;
     height: 62rem;
     padding: 4rem;
@@ -55,15 +57,15 @@ const Btn1 = styled.button`
         padding: 0.5rem 1rem;
         border: solid 1px #053651;
         border-radius: 0.5rem;
-        background: #053651;
+        background: #495867;
         color: white;
         font-weight: 300;
         font-size: 1.5rem;
         cursor: pointer;
         &:hover {
-            background: #2998D5;
+            background: #577399;
             color: #101B21;
-            border: #2998D5 solid 1px;             
+            border: #577399 solid 1px;             
     }`
 
 
@@ -89,7 +91,7 @@ function handleSubmit(e) {
     <div>
          
         <Navbar />
-        
+        <Sidecontent />
     <Form onSubmit={handleSubmit}>
       <h2>Login</h2>
       <p>Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy. <br /> <br /><em>Norman Vincent Peale</em></p>
@@ -125,6 +127,7 @@ function handleSubmit(e) {
       {isPending && <Btn1 disabled>Logging in...</Btn1>}
       {error && <p>{error}</p>}
     </Form>
+    <Footer />
     </div>
   )
 }

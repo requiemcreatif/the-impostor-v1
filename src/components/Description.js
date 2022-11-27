@@ -4,38 +4,18 @@ import iconOne from "../img/icon-one.svg";
 import iconTwo from "../img/icon-two.svg";
 
 const Wrapper = styled.div`
-
+    /* DESKTOP */
     max-width: 1200px;
     margin: 5rem auto;
-    background-color: #E0F4FF;
+    background-color: #bdd5ea;
     border-radius: 10px;
+    border: 1px solid #ccc;
 
-    @media (min-width: 768px) {
-        max-width: 1250px;
-        margin: 15rem auto;
+    /* MOBILE */
+    @media (max-width: 768px) {
+        margin: 2rem auto;
+
     }
-    `
-
-// top colored section
-const SectionOne = styled.section`
-    display: flex;
-    `
-const DivOne = styled.div`
-    width: 20rem;
-    height: 2rem;
-    background: #2998D5;
-    border-radius: 10px 0 0 0;
-    `
-const DivTwo = styled.div`
-width: 100rem;
-height: 2rem;
-background: #CDF72B;
-`
-const DivThree = styled.div`
-    width: 20rem;
-    height: 2rem;
-    background: #101B21;
-    border-radius: 0 10px 0 0;
     `
 // Description section
 const SectionTwo = styled.section`
@@ -44,9 +24,8 @@ const SectionTwo = styled.section`
 
 @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    
-
-    
+    //width: 40rem; 
+    //margin: 0 auto;
 }
 //gap: 3rem;
 `
@@ -56,6 +35,8 @@ const TopSection = styled.div`
 
     h2 {
         font-size: 3rem;
+        font-weight: 600;
+        color: #011627;
     }
     `
 
@@ -75,11 +56,11 @@ const SectionWrapper = styled.div`
 const Description = () => {
   return (
     <Wrapper>
-        <SectionOne>
+        {/* <SectionOne>
             <DivOne></DivOne>
             <DivTwo></DivTwo>
             <DivThree></DivThree>
-        </SectionOne>
+        </SectionOne> */}
 
         <SectionTwo>
             <SectionWrapper>

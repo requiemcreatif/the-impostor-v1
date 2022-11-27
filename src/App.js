@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Mainpage from "./pages/Mainpage";
 import './App.css';
+import Createpost from "./pages/Createpost";
 
 function App() {
   const {authIsReady, user} = useAuthContext()
@@ -21,6 +22,7 @@ function App() {
     <BrowserRouter>  
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/createpost" element={<Createpost/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/mainpage"  element={user ? <Mainpage/> : <Navigate to="/login"/>}/> 

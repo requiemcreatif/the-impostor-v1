@@ -2,13 +2,15 @@ import React from "react";
 import { useState } from 'react'
 import { useSignup } from '../hooks/useSignup'
 import Navbar from "../components/Navbar"
+import Sidecontent from "../components/Sidecontent";
+import Footer from "../components/Footer";
 //import { motion } from 'framer-motion/dist/framer-motion'
 import { motion } from "framer-motion";
 import styled from 'styled-components'
 
 const Form = styled.form`
 background: white;
-    margin: 6rem auto;
+    margin: 10rem auto;
     width: 40rem;
     height: 62rem;
     padding: 4rem;
@@ -51,17 +53,17 @@ const Btn1 = styled.button`
         width: 100%;
         height: 5rem;
         padding: 0.5rem 1rem;
-        border: solid 1px #053651;
+        border: solid 1px #495867;
         border-radius: 0.5rem;
-        background: #053651;
+        background: #495867;
         color: white;
         font-weight: 300;
         font-size: 1.5rem;
         cursor: pointer;
         &:hover {
-            background: #2998D5;
+            background: #577399;
             color: #101B21;
-            border: #2998D5 solid 1px;
+            border: #577399 solid 1px;
                 
     }`
 
@@ -83,6 +85,7 @@ function handleSubmit(e) {
   return (
     <div>
         <Navbar />
+        <Sidecontent />
         <Form onSubmit={handleSubmit}>
       <h2>Sign up</h2>
       <p>The first step toward success is taken when you refuse to be a captive of the environment in which you first find yourself.<br /> <br /><em>Mark caine</em></p>
@@ -127,9 +130,10 @@ function handleSubmit(e) {
         }
         {isPending && <Btn1 disabled>Signing up...</Btn1>}
         {error && <div>{error}</div>}
-        <p>By signing up you are agreeing to our Terms and Conditions.</p>
+        <p>By signing up you are agreeing to our <span style={{color:"#e63946", fontWeight: "500"}}>Terms and Conditions</span> .</p>
         
     </Form>
+    <Footer />
     </div>
     
   )

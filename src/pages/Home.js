@@ -1,37 +1,51 @@
 import React from "react";
 import Header from "../components/Header";
+import Sidecontent from "../components/Sidecontent";
 import Footer from "../components/Footer";
 import styled from "styled-components"
 import Description from "../components/Description"
 import Navbar from "../components/Navbar";
 
 const HomeDiv = styled.div`
-    background-color: #053651;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+
+    //background-color: #ffffff;
+    background-color: #f7f7ff;
+    //border: 1px solid #ccc;
+    margin: 0 auto;
+    //border-radius: 10px;
+    margin-bottom: 2rem;
+    //background-color: #ffff;
+    max-width: 1500px;
     height: auto;
-    width: 100%;
+    //width: 100%;
     padding: 10rem 2rem;
     `
 
-const NavWrapper = styled.div`
-position: fixed;
-width: 100%;
-right: 0;
-left: 0;
-z-index: 1;
-margin: 0 auto;
-max-width: 1500px ;
-`
+
+
+
 
 const Home = () => {
   return (
     <>
-    <NavWrapper>
+    {/* <NavWrapper>
      <Navbar/>
-    </NavWrapper>
-    <HomeDiv>
-      <Header />
-      <Description />
-    </HomeDiv>
+    </NavWrapper> */}
+    <Navbar/>
+    <Sidecontent />
+
+      <HomeDiv>
+        <Header />
+        <Description />
+      </HomeDiv>
+        
+
+    
       <Footer />
     </>
     

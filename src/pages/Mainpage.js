@@ -1,6 +1,8 @@
 import React from "react";
 import Card from "../components/Card"
 import Navbar from "../components/Navbar"
+import Sidecontent from "../components/Sidecontent";
+import Footer from "../components/Footer";
 import styled from "styled-components"
 
 
@@ -21,6 +23,7 @@ const Mainpage = () => {
   return (
     <>
       <Navbar/>
+      <Sidecontent />
         {/* <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -36,6 +39,7 @@ const Mainpage = () => {
             <Card/>
             </CardContainer>
         {/* </motion.div> */}
+      <Footer />
     </>
     
     

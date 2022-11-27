@@ -3,30 +3,29 @@ import {Link} from "react-router-dom"
 import { useLogout } from "../hooks/useLogout"
 import { useAuthContext } from "../hooks/useAuthContext"
 import styled from "styled-components"
-//import { motion } from 'framer-motion/dist/framer-motion'
 import { motion } from "framer-motion";
-import logo from "../img/Logo-v2.svg"
+import Sound from "../sounds/sound-click.mp3";
+
+const Container = styled.div`
+    width: 100%;
+    //background: #CDF72B;
+    //background: #000000;
+    background: #577399;
+`
 
 const Nav = styled.nav`
-    /* position: fixed;
-    width: 100%;
-    right: 0;
-    left: 0;
-    z-index: 1; */
     margin: 0 auto;
-    max-width: 1500px ;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    //flex-direction: column;
     color: #E0F4FF;
     padding: 2rem 0;
     gap: 2rem;
-    background: #053651;
-    //background: #101B21;
-    //box-shadow: 0 0 1rem #ccc;
-    //shadow at the bottom
-    box-shadow: 0 0 0.5rem #101B21;
+    max-width: 1500px;
+    //background: #053651;
+    background: #577399;
+    //box-shadow: 0 0 0.5rem #101B21;
+    border-radius: 0.5rem ;
     ul {
         display: flex;
         gap: 4rem;
@@ -34,38 +33,45 @@ const Nav = styled.nav`
 }
 a {
     text-decoration: none;
-    color: #E0F4FF;
+    //color: #E0F4FF;
+    color: #000000;
 }
 `
 
 const Btn1 = styled.button`
-        width: 8rem;
+        width: 15rem;
+        height: 4rem;
         padding: 0.5rem 1rem;
-        border: solid 1px #CDF72B;
+        border: solid 1px #f7f7ff;
+        //border: solid 1px #ffffff;
         border-radius: 0.3rem;
         background: transparent;
-        color: #E0F4FF;
+        color: #f7f7ff;
         font-weight: 300;
         cursor: pointer;
         &:hover {
-            background: #CDF72B;
-            color: #101B21;
-                
+            //background: #CDF72B;
+            background: #bdd5ea;
+            border: solid 1px #bdd5ea;
+            //color: #101B21;     
+            color: #000000;
     }`
 
 const Btn2 = styled.button`
-width: 8rem;
+width: 15rem;
+height: 4rem;
 padding: 0.5rem 1rem;
-border: solid 1px #CDF72B;
-border-radius: 0.3rem;
-background: #CDF72B;
-color: #101B21;
+border: solid 1px #f7f7ff;
+border-radius: 0.5rem;
+//background: #CDF72B;
+background: transparent;
+color: #f7f7ff;
 font-weight: 300;
 cursor: pointer;
 &:hover {
-    background: transparent;
-    
-    color: #E0F4FF;
+    background: #fe5f55;
+    color: #000000;
+    border: solid 1px #fe5f55;
 }`
 
 const Div = styled.div`
@@ -84,10 +90,14 @@ const Div2 = styled.div`
 const Navbar = () => {
     const { logout } = useLogout()
     const { user } = useAuthContext()
-    
+    const audio = new Audio(Sound);
+    const playSound = () => {
+        audio.play();
+    }
 
   return (
     // <Nav className="navbar">
+<Container>
     <div>
     {user && (
             <Div2>
@@ -96,16 +106,21 @@ const Navbar = () => {
             )}
 
     <Nav>
-        <img src={ logo} alt="logo impostr" className="impostr-logo" />
+        
         <ul>
-            <li>
+            {/* <li>
                 <Link to="/">Home</Link>
             </li>
             {user && (
-                <li>
-                    <Link to="/mainpage">Back</Link>
-                </li>               
-            )}
+                <>
+                    <li>
+                        <Link to="/mainpage">Blog</Link>
+                    </li> 
+                    <li>
+                        <Link to="/createpost">Add Post</Link>
+                    </li>
+                </>             
+            )} */}
             {!user && (
             <>
                 <motion.div
@@ -114,7 +129,7 @@ const Navbar = () => {
                     >
 
                 
-                    <li><Link to="/Login"><Btn1>Login</Btn1></Link></li>
+                    <li><Link to="/Login"><Btn1 onClick={playSound}>Login</Btn1></Link></li>
                  
                     </motion.div>
 
@@ -122,7 +137,7 @@ const Navbar = () => {
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                    <li><Link to="/Signup"><Btn2>Signup</Btn2></Link></li>
+                    <li><Link to="/Signup"><Btn2 onClick={playSound}>Create account</Btn2></Link></li>
                     </motion.div>
 
                 </> 
@@ -135,13 +150,13 @@ const Navbar = () => {
                         whileTap={{ scale: 0.9 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                         >
-                        <Link to="/"><Btn1 onClick={logout}>Logout</Btn1></Link>
+                        <Link to="/"><Btn1 onClick={logout} >Logout</Btn1></Link>
                     </motion.div>
                 </Div>
             )}
     </Nav>
     </div>
-    
+</Container> 
   )
 }
 

@@ -6,22 +6,23 @@ const Btn = styled.button`
     width: 12rem;
     height: 3.5rem;
     padding: 0.5rem 1rem;
-    border: solid 1px #CDF72B;
+    border: none;
     border-radius: 0.3rem;
-    background: #CDF72B;
-    color: #053651;
+    border: #e63946 solid 1px; 
+    background: transparent;
+    color: #ffffff;
     font-weight: 300;
     cursor: pointer;
 
    
     &:hover {
-        background: transparent;
+        background: #e63946;
         color: #E0F4FF;
-        border: #CDF72B solid 1px;      
+        //border: #e63946 solid 1px;      
 }`
 
 const FormContainer = styled.div`
-    background: #64BBEB;
+    background: #577399;
     padding: 6rem 1rem;
     flex-direction: column;
     display: flex;
@@ -47,7 +48,7 @@ const FormContainer = styled.div`
 
 `
 const Wrapper = styled.div`
-    background: #2998D5;
+    background: #495867;
     padding: 5rem 2rem;
     display: flex;
     flex-direction: column;
