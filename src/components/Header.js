@@ -1,7 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom"
 import { useAuthContext } from "../hooks/useAuthContext";
-import { motion } from 'framer-motion/dist/framer-motion'
+//import { motion } from 'framer-motion/dist/framer-motion'
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const HeaderStyled = styled.section`
