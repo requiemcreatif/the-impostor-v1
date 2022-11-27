@@ -1,7 +1,8 @@
+import React from "react";
 import Card from "../components/Card"
 import Navbar from "../components/Navbar"
 import styled from "styled-components"
-import { motion } from "framer-motion"
+
 
 const CardContainer = styled.div`
     margin: 5rem auto;

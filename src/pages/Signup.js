@@ -1,7 +1,8 @@
+import React from "react";
 import { useState } from 'react'
 import { useSignup } from '../hooks/useSignup'
 import Navbar from "../components/Navbar"
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion/dist/framer-motion'
 import styled from 'styled-components'
 
 const Form = styled.form`

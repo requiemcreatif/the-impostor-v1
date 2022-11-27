@@ -11,9 +11,14 @@ const firebaseConfig = {
     appId: "1:78039409796:web:260319249a00a666738ed1"
   };
 
+  // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
+      // initialize services
     const databaseFirebase = firebase.firestore();
     const projectAuth = firebase.auth();
 
-    export { databaseFirebase, projectAuth  };
+    // timestamp
+    const timestamp = firebase.firestore.Timestamp;
+
+    export { databaseFirebase, projectAuth, timestamp   };

@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import iconOne from "../img/icon-one.svg";
 import iconTwo from "../img/icon-two.svg";

@@ -1,8 +1,9 @@
+import React from "react";
 import {Link} from "react-router-dom"
 import { useLogout } from "../hooks/useLogout"
 import { useAuthContext } from "../hooks/useAuthContext"
 import styled from "styled-components"
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion/dist/framer-motion'
 import logo from "../img/Logo-v2.svg"
 
 const Nav = styled.nav`

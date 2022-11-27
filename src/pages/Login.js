@@ -1,10 +1,11 @@
+import React from "react";
 import {useNavigate} from "react-router-dom"
 import { useState } from 'react'
 import { useLogin } from '../hooks/useLogin'
 import Navbar from "../components/Navbar"
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion/dist/framer-motion'
 import styled from 'styled-components'
-import { useAuthContext } from "../hooks/useAuthContext"
+
 
 const Form = styled.form`
 background: white;
@@ -72,7 +73,7 @@ const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const { login, error, isPending } = useLogin()
 const navigate = useNavigate()
-const { user } = useAuthContext()
+
 
 function handleSubmit(e) {
     e.preventDefault()
