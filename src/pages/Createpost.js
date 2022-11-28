@@ -109,6 +109,10 @@ const Createpost = () => {
             value={date}
             />
         </label>
+        <label>
+            <span>Post category:</span>
+        </label>
+        
         <Btn1>Submit post</Btn1>
     </Form>
     </Container>
