@@ -6,6 +6,7 @@ import styled from "styled-components"
 import Description from "../components/Description"
 import Navbar from "../components/Navbar";
 
+
 const HomeDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -42,6 +43,7 @@ const Home = () => {
       <HomeDiv>
         <Header />
         <Description />
+
       </HomeDiv>
         
 

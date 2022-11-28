@@ -1,4 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Select from "react-select";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../hooks/useAuthContext";
+import { useCollection } from "../hooks/useCollection";
+import { useFirestore } from "../hooks/useFirestore";
+import { timestamp } from "../firebase/config";
 import Navbar from "../components/Navbar";
 import Sidecontent from "../components/Sidecontent";
 import Footer from "../components/Footer";
@@ -61,18 +67,68 @@ const Btn1 = styled.button`
             border: #2998D5 solid 1px;             
     }`
 
+    const categories = [
+        {value: "motivation", label: "motivation"},
+        {value: "mentor", label: "mentor"},
+        {value: "experience", label: "experience"},
+        {value: "help", label: "help"},
+    ]
+    
+
 
 const Createpost = () => {
+    const navigate = useNavigate()
+    const {addDocument, response} = useFirestore("posts")
+    const {document} = useCollection("users")
+    const [users, setUsers] = useState([])
+    const {user} = useAuthContext()
+
+
+
     const [name, setName] = useState("")
     const [details, setDetails] = useState("")
     const [date, setDate] = useState("")
     const [category, setCategory] = useState("")
-    const [users, setUsers] = useState([])
+    
+    const [errorForm, setErrorForm] = useState(null)
+
+    useEffect(() => {
+        if(document) {
+            const options = document.map(user => {
+                return {value: user, label: user.displayName}
+            })
+            setUsers(options)
+        }
+    }, [document])
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
-        console.log(name, details, date);
+        setErrorForm(null)
+        if(!category) {
+            setErrorForm("You need to select a post category")
+            return
+        }
+
+    const postedBy = {
+        displayName: user.displayName,
+        id: user.uid
+    }
+
+    const posts = {
+        name, 
+        details,
+        category: category.value,
+        date: timestamp.fromDate(new Date(date)),
+        comments: [],
+        postedBy,
+    }
+
+
+        await addDocument(posts)
+        if(!response.error) {
+            navigate("/mainpage")
+        }
     }
 
   return( 
@@ -111,9 +167,14 @@ const Createpost = () => {
         </label>
         <label>
             <span>Post category:</span>
+            <Select
+            onChange={(option) => setCategory(option)}
+            options={categories}
+            />
         </label>
         
         <Btn1>Submit post</Btn1>
+        {errorForm && <p>{errorForm}</p>}
     </Form>
     </Container>
     <Footer />

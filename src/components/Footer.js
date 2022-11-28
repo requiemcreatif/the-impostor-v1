@@ -43,7 +43,7 @@ const FormContainer = styled.div`
         flex-direction: row;
         gap: 2rem;
         align-items: center;
-        width: 1250px;
+        width: 1500px;
     }
 
 `

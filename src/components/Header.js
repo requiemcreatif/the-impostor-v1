@@ -9,7 +9,7 @@ import styled from "styled-components";
 const HeaderStyled = styled.section`
     //background: #053651;
     //color: white;
-    max-width: 1000px;
+    max-width: 1200px;
     color: #011627;
     padding: 10rem 0 10rem 0;
     display: flex;

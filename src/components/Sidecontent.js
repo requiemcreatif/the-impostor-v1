@@ -10,19 +10,16 @@ const SideContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    //border: 1px solid #ccc;
-    //border-radius: 10px;
-    //box-shadow: 0 0 0 0.5rem #101B21;
 `
 
 const Nav = styled.nav`
-    margin: 1rem auto;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     color: #E0F4FF;
-    padding: 2rem 0;
-    gap: 5rem;
+    padding: 2rem 1rem;
+    gap: 4rem;
     max-width: 1500px;
     border-radius: 0.5rem ;
     ul {
@@ -51,7 +48,7 @@ const Sidecontent = () => {
   <SideContainer>
      
      <Nav>
-     <img src={ logo} alt="logo impostr" className="impostr-logo" />
+     <img src={logo} alt="logo impostr" className="impostr-logo" />
         <ul>
             <li>
                 <Link to="/">Home</Link>

@@ -30,7 +30,7 @@ html {
 }
 
 .impostr-logo {
-    width: 100px
+    width: 100px;
 }
 
 .cursor {
@@ -44,4 +44,17 @@ html {
   transition: all 0.5s ease-in-out;
   transition-property: background, transform;
   transform-origin: 75% 75%;
+}
+
+.error-message {
+  text-align: center;
+  font-size: 1.5;
+  font-weight: 600;
+  border: 1px solid red;
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: "Blinker", sans-serif;
+  color:  #ff0000;
+  max-width: 500px; 
+  margin: 2rem auto;
 }
