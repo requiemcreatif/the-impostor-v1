@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Comments from "./Comments";
+
 
 //Styled Components
 const PostGrid = styled.div`
