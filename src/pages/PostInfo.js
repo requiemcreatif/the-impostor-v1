@@ -19,7 +19,6 @@ const Blog = () => {
   margin: 4rem auto;
   padding: 0 4rem;
   
-
   `
 
   const {id} = useParams()

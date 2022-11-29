@@ -67,8 +67,9 @@ const CardHeader = styled.div`
 const Card = () => {
   return (
     <CardStyle>
-      <CardHeader>
-      </CardHeader>
+      {/* <CardHeader>
+      </CardHeader> */}
+
       <Title>
         {/* <Btn2>Read more</Btn2> */}
         <h2>Lorem ipsum dolor sit amet.</h2>

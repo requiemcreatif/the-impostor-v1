@@ -5,16 +5,14 @@ import iconTwo from "../img/icon-two.svg";
 
 const Wrapper = styled.div`
     /* DESKTOP */
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 5rem auto;
     background-color: #bdd5ea;
     border-radius: 10px;
-    border: 1px solid #ccc;
 
     /* MOBILE */
     @media (max-width: 768px) {
         margin: 2rem auto;
-
     }
     `
 // Description section

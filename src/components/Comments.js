@@ -13,6 +13,7 @@ const Form = styled.form`
     align-items: left;
     margin: 4rem auto;
     /* padding: 0 4rem; */
+    
 
     label {
         display: flex;
@@ -31,6 +32,7 @@ const Form = styled.form`
     textarea {
         min-height: 6rem;
         width: 35rem;
+        
     }
 
     @media (min-width: 768px) {
@@ -70,6 +72,14 @@ const Btn1 = styled.button`
         width: 30rem;
         list-style: none;
         margin: 0 auto;
+        
+    }
+
+
+    hr {
+        width: 100%;
+        border-top: .5px solid #495867;
+        
     }
 
     li {
@@ -80,7 +90,13 @@ const Btn1 = styled.button`
         padding: 1rem;
         border: 1px solid #ccc;
         border-radius: 0.5rem;
+        background-color: #ffffff;
+
     }
+   .name {
+     font-weight: 600;
+     padding-bottom: 1rem;
+   }
 
     @media (min-width: 768px) {
         ul {
@@ -119,7 +135,8 @@ const Comments = ({post}) => {
         {post.comments.length > 0 && post.comments.map((comment) => (
             <li key={comment.id}>
                 <div>
-                    <p>{comment.displayName} says...</p>
+                    <p className="name">{comment.displayName} says...</p>
+                    <hr />
                 </div>
                 <div>
                     <p>date here</p>

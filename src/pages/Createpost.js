@@ -15,16 +15,17 @@ const Container = styled.div`
     padding: 5rem;
     margin: 5rem auto;
     max-width: 1250px;
+    
     `
 
 const Form = styled.form`
     margin: 6rem auto;
-    //max-width: 1000rem;
+    background-color: #F7F7FF;
     height: auto;
     padding: 4rem;
-    border: 1px solid #ccc;
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem #ccc;
+    border-bottom: 1px solid #ccc;
+    //border-radius: 1rem;
+    //box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
     font-family: "Blinker", sans-serif;
     label {
         display: block;
@@ -37,7 +38,7 @@ const Form = styled.form`
     input, textarea {
         padding: 0.5rem 1rem ;
         border: solid 1px #ddd;
-        border-radius: 0.3rem;
+        //border-radius: 0.3rem;
         background: transparent;
         color: #053651;
         font-weight: 300;
