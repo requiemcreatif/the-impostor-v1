@@ -25,14 +25,16 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/createpost" element={<Createpost/>}/>
         <Route path="/login" element={<Login/>}/>
-
+        <Route path="/mainpage" element={<Mainpage/>}/>
         <Route path="posts/:id" element={user ? <PostInfo/> : <Navigate to="/login"/>}/> 
           {/* {!user && <Navigate to="/login"/>}
           {user && <Blog/>} */}
 
 
         <Route path="/signup" element={<Signup/>}/>
-        <Route path="/mainpage"  element={user ? <Mainpage/> : <Navigate to="/login"/>}/> 
+        {/* <Route path="/mainpage"  element={user ? <Mainpage/> : <Navigate to="/login"/>}/> */}
+        <Route path="/mainpage"  element={!user ? <Login/> : <Navigate to="/mainpage"/>}/> 
+        {/* <Route path="/mainpage"  element={user && <Mainpage/>}/>  */}
       </Routes>
     </BrowserRouter>
     )}

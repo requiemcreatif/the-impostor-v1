@@ -2,14 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+// STYLES
+
+const Container = styled.div`
+    //text-align: center;
+    margin: 5rem auto;
+    padding: 2rem 8rem;
+
+`
+
 const PostGrid = styled.div`
-    margin: 4rem auto;
+    margin: 10rem auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    height: 40rem;
+    grid-template-rows: auto;
     grid-gap: 2rem;
     padding: 0 4rem;
-
     @media (max-width: 768px) {
         height: auto;
         width: 100%;
@@ -39,6 +47,11 @@ const PostGrid = styled.div`
         display: flex;
     }
 `
+const CardContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+`
 
 const Btn2 = styled.button`
     width: 10rem;
@@ -61,22 +74,30 @@ const Btn2 = styled.button`
 
 const PostList = ({posts}) => {
   return( 
+    <div>
+    <Container>
+        <p>Welcome to Imsptr community!! Here you will find all the information you need about Impostor syndrome. Our wonderful community is here to help you. 
+        You will be able to read previous articles and posts or to create a new one.
+        Feel free to share your experience with other users. Remember, You are not alone!!
+        </p>
+    </Container>
     <PostGrid>
-
         {posts.length === 0 && <p>There is no posts at this moment</p>}  
         {posts.map(post => (
             <Link to={`/posts/${post.id}`} key={post.id}>
-            <div>
+            <CardContent>
                 <div>
+                    <img src="" alt="" />
                 </div>
                 <h2>{post.name}</h2>
                 <p>Date: {post.date.toDate().toDateString()}</p>
                 <Btn2>Read more</Btn2>
-            </div>
+            </CardContent>
             </Link>
-            
         ))}  
-    </PostGrid>);
+    </PostGrid>
+    </div>)
+    
 };
 
 export default PostList;

@@ -10,6 +10,7 @@ import MobileNav from "../img/Mobile-Navbar.svg"
 
 
 const SideContainer = styled.div`
+    //margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +24,7 @@ const Nav = styled.nav`
     padding: 2rem 20rem;
     width: 100%;
     //gap: 10rem;
-    //max-width: 1500px;
+    max-width: 1500px;
     border-radius: 0.5rem;
 
     .hamburger-menu {

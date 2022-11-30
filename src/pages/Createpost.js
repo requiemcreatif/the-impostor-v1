@@ -10,23 +10,40 @@ import Sidecontent from "../components/Sidecontent";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 
+// STYLES
+const DivTitle = styled.div`
+    //text-align: center;
+    margin: 0 auto;
+    padding: 2rem 8rem;
+`
+const Div = styled.div`
+    max-width: 1500px;
+    margin: 0 auto;
+
+    h2 {
+        text-align: center;
+        padding-bottom: 3rem;
+    }
+`
 const Container = styled.div`
-    background: transparent;
+    background: #F7F7FF;
     padding: 5rem;
     margin: 5rem auto;
     max-width: 1250px;
-    
     `
 
 const Form = styled.form`
+    display: grid;
+    flex-direction: column;
     margin: 6rem auto;
     background-color: #F7F7FF;
     height: auto;
     padding: 4rem;
-    border-bottom: 1px solid #ccc;
-    //border-radius: 1rem;
-    //box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
     font-family: "Blinker", sans-serif;
+
+    @media (max-width: 768px) {
+        padding: 0;
+    }
     label {
         display: block;
         margin: 2rem auto;
@@ -38,8 +55,8 @@ const Form = styled.form`
     input, textarea {
         padding: 0.5rem 1rem ;
         border: solid 1px #ddd;
-        //border-radius: 0.3rem;
-        background: transparent;
+        border-radius: .3rem;
+        background-color: #ffffff; // here
         color: #053651;
         font-weight: 300;
         font-size: 1em;
@@ -47,7 +64,8 @@ const Form = styled.form`
         box-sizing: border-box;
     }
     textarea {
-        min-height: 16rem;
+        min-height: 19rem;
+        background-color: #ffffff;
     }
 `
 const Btn1 = styled.button`
@@ -66,8 +84,22 @@ const Btn1 = styled.button`
             background: #2998D5;
             color: #101B21;
             border: #2998D5 solid 1px;             
-    }`
-
+    }
+    @media (max-width: 768px) {
+        width: 100%;    
+    }
+    
+    `
+    const PostFormLayout = styled.div`
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    `
+    // CATEGORY SELECTOR
     const categories = [
         {value: "motivation", label: "motivation"},
         {value: "mentor", label: "mentor"},
@@ -76,6 +108,7 @@ const Btn1 = styled.button`
     ]
     
 
+// FUNCTION COMPONENT START
 
 const Createpost = () => {
     const navigate = useNavigate()
@@ -137,17 +170,45 @@ const Createpost = () => {
         <Navbar />
         <Sidecontent />
         <Container>
-    <h2>Add a new post</h2>
+    <Div>
+        <DivTitle>
+            <h2>Add a new post</h2>
+            <p>Share your experience, your story with our community.</p>
+        </DivTitle>   
+    
     <Form onSubmit={handleSubmit}>
-        <label>
-            <span>Post title:</span>
-            <input 
-            required
-            type="text" 
-            onChange={(e)=> setName(e.target.value)}
-            value={name}
-            />
-        </label>
+        <PostFormLayout>
+        {/* POST SELECTION FIELDS */}
+        <div>
+            <label>
+                <span>Post Title:</span>
+                <input 
+                required
+                type="text" 
+                onChange={(e)=> setName(e.target.value)}
+                value={name}
+                />
+            </label>
+            
+            <label>
+                <span>Date:</span>
+                <input 
+                required
+                type="date" 
+                onChange={(e)=> setDate(e.target.value)}
+                value={date}
+                />
+            </label>
+            <label>
+                <span>Category:</span>
+                <Select
+                onChange={(option) => setCategory(option)}
+                options={categories}
+                />
+            </label>
+        </div>
+        {/* POST TEXTAREA FIELD */}
+        <div>
         <label>
             <span>Post detail:</span>
             <textarea 
@@ -157,26 +218,15 @@ const Createpost = () => {
             value={details}
             ></textarea>
         </label>
-        <label>
-            <span>Post date:</span>
-            <input 
-            required
-            type="date" 
-            onChange={(e)=> setDate(e.target.value)}
-            value={date}
-            />
-        </label>
-        <label>
-            <span>Post category:</span>
-            <Select
-            onChange={(option) => setCategory(option)}
-            options={categories}
-            />
-        </label>
-        
-        <Btn1>Submit post</Btn1>
-        {errorForm && <p>{errorForm}</p>}
+        </div>
+
+        </PostFormLayout>
+        <div>
+            <Btn1>Submit post</Btn1>
+            {errorForm && <p>{errorForm}</p>}
+        </div>
     </Form>
+    </Div>
     </Container>
     <Footer />
   </div>)

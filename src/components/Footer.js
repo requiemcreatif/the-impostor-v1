@@ -24,21 +24,22 @@ const FormContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 2rem;
     color: #E0F4FF;
     
     p {
         font-size: 1.5rem;
         font-weight: 300;
         padding: 0 2rem;
+        padding-bottom: 2rem;
     }
     /* desktop media */
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
         flex-direction: column;
         gap: 4rem;
-        //align-items: center;
-        max-width: 600px;
-    }
+        //padding: 0 1rem;
+        max-width: 400px;
+    } 
 `
 const Wrapper = styled.div`
     background: #495867;
@@ -50,8 +51,8 @@ const Wrapper = styled.div`
     color: #E0F4FF;
     gap: 2rem;
 
-    @media (min-width: 768px) {
-        padding: 5rem 5rem;  
+    @media (max-width: 768px) {
+        padding: 5rem 2rem;  
     }
      
      form {
@@ -68,6 +69,7 @@ const Wrapper = styled.div`
             @media (max-width: 768px) {
                 gap: 2rem;
                 flex-direction: column;
+                
 
                 button {
                     width: 100%;
@@ -80,7 +82,7 @@ const Wrapper = styled.div`
             background: transparent;
             padding: 1rem 1rem;
             margin-top: 20px;
-            width: 40rem;   
+            width: 35rem;   
         }
             
             input::placeholder {
