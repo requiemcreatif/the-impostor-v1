@@ -1,6 +1,6 @@
 # The Impost
 
-![Impostr Logo](/src/img/logo-v2.png)
+![Impostr Logo](src/img/Logo-v2.png)
 
 - Work in Progress...
   (https://impostr-889b5.web.app/)
