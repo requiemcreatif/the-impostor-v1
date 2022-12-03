@@ -1,12 +1,16 @@
-# Getting Started with Create React App
+# The Impost
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Purpose
 
-In the project directory, you can run:
+The purpose of this app is to provide information related to Impostor Syndrome.
+Users will be able to find enough information, but also real people stories in order to help them
+understand what is the cause of this syndrome, how to deal with it and eventually live with it.
 
-### `npm start`
+## Tech used
+
+React
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -68,4 +72,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # the-impostor-v1
