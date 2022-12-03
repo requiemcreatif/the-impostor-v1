@@ -15,6 +15,11 @@ const DivTitle = styled.div`
   //text-align: center;
   margin: 0 auto;
   padding: 2rem 8rem;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 2rem 2rem;
+  }
 `;
 const Div = styled.div`
   max-width: 1500px;

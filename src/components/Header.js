@@ -1,9 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
+import YouTube from "react-youtube";
 import Sound from "../sounds/sound-click.mp3";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+
+const HeaderWrapper = styled.div`
+  display: grid;
+`;
 
 const HeaderStyled = styled.section`
   max-width: 1100px;
@@ -53,6 +58,7 @@ const Header = () => {
           fulling your potential
         </h1>
         {/* <p>Don’t be afraid of failing. Lorem Ipsum is simply dummy text! Lorem ipsum.</p> */}
+
         {!user && (
           <motion.div
             whileHover={{ scale: 1.1 }}
@@ -63,6 +69,7 @@ const Header = () => {
           </motion.div>
         )}
       </HeaderStyled>
+      {/* <YouTube /> */}
     </div>
   );
 };

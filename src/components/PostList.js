@@ -8,6 +8,12 @@ const Container = styled.div`
   //text-align: center;
   margin: 5rem auto;
   padding: 2rem 8rem;
+
+  @media (max-width: 768px) {
+    p {
+      padding: 0;
+    }
+  }
 `;
 
 const PostGrid = styled.div`

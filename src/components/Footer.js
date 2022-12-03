@@ -2,48 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Music from "./Music";
 
-const Btn = styled.button`
-  margin-top: 2rem;
-  width: 12rem;
-  height: 3.5rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 0.3rem;
-  border: #e63946 solid 1px;
-  background: #e63946;
-  color: #ffffff;
-  font-weight: 300;
-  cursor: pointer;
-  &:hover {
-    background: #e63946;
-    color: #e0f4ff;
-  }
-`;
-
-const FormContainer = styled.div`
-  padding: 4rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  color: #e0f4ff;
-
-  p {
-    font-size: 1.5rem;
-    font-weight: 300;
-    padding: 0 2rem;
-    padding-bottom: 2rem;
-  }
-  /* desktop media */
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 4rem;
-    //padding: 0 1rem;
-    max-width: 400px;
-  }
-`;
-const Wrapper = styled.div`
+const TopFooter = styled.div`
   background: #495867;
   padding: 2rem 2rem;
   display: flex;
@@ -55,6 +14,37 @@ const Wrapper = styled.div`
 
   @media (max-width: 768px) {
     padding: 5rem 2rem;
+  }
+`;
+
+const FormContainer = styled.div`
+  background-color: #053651;
+  //width: 100%;
+  padding: 0 2rem;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: #e0f4ff;
+
+  h2 {
+    padding-bottom: 4rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding-top: 7rem;
+    //padding-bottom: 2rem;
+  }
+  /* desktop media */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 4rem;
+    //padding: 0 1rem;
+    //max-width: 400px;
   }
 
   form {
@@ -93,6 +83,24 @@ const Wrapper = styled.div`
   }
 `;
 
+const Btn = styled.button`
+  margin-top: 2rem;
+  width: 12rem;
+  height: 3.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  border: #e63946 solid 1px;
+  background: #e63946;
+  color: #ffffff;
+  font-weight: 300;
+  cursor: pointer;
+  &:hover {
+    background: #e63946;
+    color: #e0f4ff;
+  }
+`;
+
 const Footer = () => {
   const HandleSubmit = (e) => {
     e.preventDefault();
@@ -100,8 +108,11 @@ const Footer = () => {
   };
 
   return (
-    <Wrapper>
-      <Music />
+    <>
+      <TopFooter>
+        <p>Patrick Watson - Je te laisserai des mots</p>
+        <Music />
+      </TopFooter>
       <FormContainer>
         <h2>Subscribe to our newsletter.</h2>
         {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> */}
@@ -109,9 +120,9 @@ const Footer = () => {
           <input type="text" placeholder="Enter your email" />
           <Btn>Subscribe</Btn>
         </form>
+        <p>Impostr 2022. All rights reserved</p>
       </FormContainer>
-      <p>Impostr 2022. All rights reserved</p>
-    </Wrapper>
+    </>
   );
 };
 
