@@ -38,7 +38,7 @@ Work in Progress...
 useContext
 useReducer
 
-## Custom Hookes
+## Custom Hooks
 
 - useAuthContext
 - useCollection
