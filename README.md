@@ -1,6 +1,6 @@
 # The Impost
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Work in Progress...
 
 ## Purpose
 
@@ -11,6 +11,44 @@ understand what is the cause of this syndrome, how to deal with it and eventuall
 ## Tech used
 
 React
+Firebase
+Styled Components for CSS
+
+## Pages
+
+Home
+Login
+Sign up
+Mainpage / Blog
+Post
+
+## Components
+
+Header
+Navbar
+Description
+Comments
+SideContent / second Navbar
+Footer
+Post / details / List
+Music / Player
+
+## Hooks
+
+useContext
+useReducer
+
+## Custom Hookes
+
+useAuthContext
+useCollection
+useDocument
+useFirestore
+useLogin
+useLogout
+useSignup
+
+## Tech used
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
