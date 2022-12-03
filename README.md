@@ -1,6 +1,6 @@
 # The Impost
 
-![Tux, the Linux mascot](/src/img/logo-v2.svg)
+![Impostr Logo](/src/img/logo-v2.png)
 
 - Work in Progress...
   (https://impostr-889b5.web.app/)
