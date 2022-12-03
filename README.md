@@ -4,34 +4,34 @@ Work in Progress...
 
 ## Purpose
 
-The purpose of this app is to provide information related to Impostor Syndrome.
-Users will be able to find enough information, but also real people stories in order to help them
-understand what is the cause of this syndrome, how to deal with it and eventually live with it.
+- The purpose of this app is to provide information related to Impostor Syndrome.
+  Users will be able to find enough information, but also real people stories in order to help them
+  understand what is the cause of this syndrome, how to deal with it and eventually live with it.
 
 ## Tech used
 
-React
-Firebase
-Styled Components for CSS
+- React
+- Firebase
+- Styled Components for CSS
 
 ## Pages
 
-Home
-Login
-Sign up
-Mainpage / Blog
-Post
+- Home
+- Login
+- Sign up
+- Mainpage / Blog
+- Post
 
 ## Components
 
-Header
-Navbar
-Description
-Comments
-SideContent / second Navbar
-Footer
-Post / details / List
-Music / Player
+- Header
+- Navbar
+- Description
+- Comments
+- SideContent / second Navbar
+- Footer
+- Post / details / List
+- Music / Player
 
 ## Hooks
 
@@ -40,13 +40,13 @@ useReducer
 
 ## Custom Hookes
 
-useAuthContext
-useCollection
-useDocument
-useFirestore
-useLogin
-useLogout
-useSignup
+- useAuthContext
+- useCollection
+- useDocument
+- useFirestore
+- useLogin
+- useLogout
+- useSignup
 
 ## Tech used
 
