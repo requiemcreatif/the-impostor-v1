@@ -1,24 +1,24 @@
 import firebase from "firebase";
-import "firebase/firestore"
-import "firebase/auth"
+import "firebase/firestore";
+import "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAXDpWloW7awSgqZA1jxFwyp_E5qAHBw1g",
-    authDomain: "impostr-889b5.firebaseapp.com",
-    projectId: "impostr-889b5",
-    storageBucket: "impostr-889b5.appspot.com",
-    messagingSenderId: "78039409796",
-    appId: "1:78039409796:web:260319249a00a666738ed1"
-  };
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+};
 
-  // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-      // initialize services
-    const databaseFirebase = firebase.firestore();
-    const projectAuth = firebase.auth();
+// initialize services
+const databaseFirebase = firebase.firestore();
+const projectAuth = firebase.auth();
 
-    // timestamp
-    const timestamp = firebase.firestore.Timestamp;
+// timestamp
+const timestamp = firebase.firestore.Timestamp;
 
-    export { databaseFirebase, projectAuth, timestamp   };
+export { databaseFirebase, projectAuth, timestamp };

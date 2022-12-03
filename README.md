@@ -10,8 +10,8 @@
 - The purpose of this app is to provide information related to Impostor Syndrome.
   Users will be able to find enough details, but also real people stories in order to help them.
   Understand what is the cause of this syndrome, how to deal with it and eventually live with it.
-  As a registrered user you will be able to create articles, comments other user posts.
-  More features are comming, so stay tune...
+  As a registered user you will be able to create articles, comments other user posts.
+  More features are coming, so stay tune...
 
 ## Tech used
 
