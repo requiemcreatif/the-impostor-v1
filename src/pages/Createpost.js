@@ -12,7 +12,6 @@ import styled from "styled-components";
 
 // STYLES
 const DivTitle = styled.div`
-  //text-align: center;
   margin: 0 auto;
   padding: 2rem 8rem;
   text-align: center;

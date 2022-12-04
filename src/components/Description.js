@@ -48,6 +48,16 @@ const SectionWrapper = styled.div`
     padding-right: 5rem;
     font-weight: 300;
   }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    p {
+      padding-right: 0;
+    }
+    h2 {
+      font-size: 1.5em;
+    }
+  }
 `;
 
 const Description = () => {

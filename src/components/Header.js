@@ -27,6 +27,13 @@ const HeaderStyled = styled.section`
     //opacity: 0.8;
     //transition: opacity 230ms ease-in-out;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 4em;
+      padding-top: 0;
+    }
+  }
 `;
 
 const Btn2 = styled.button`

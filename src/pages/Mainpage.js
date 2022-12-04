@@ -21,7 +21,7 @@ const Mainpage = () => {
       <Sidecontent />
       <CardContainer>
         {/* <h2> Posts</h2> */}
-        {error && <p>{error}</p>}
+        {error && <p className="error">{error}</p>}
         {document && <PostList posts={document} />}
       </CardContainer>
       <Footer />
