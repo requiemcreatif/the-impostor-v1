@@ -73,9 +73,13 @@ const Div = styled.div`
 const Div2 = styled.div`
   background: #101b21;
   color: #e0f4ff;
-  padding: 1rem 15rem;
+  padding: 2rem 5rem;
   font-family: "Blinker", sans-serif;
   text-align: right;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const Navbar = () => {

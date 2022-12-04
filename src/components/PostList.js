@@ -7,23 +7,24 @@ import styled from "styled-components";
 const Container = styled.div`
   //text-align: center;
   margin: 5rem auto;
-  padding: 2rem 8rem;
+  //padding: 2rem 8rem;
 
   @media (max-width: 768px) {
     p {
-      padding: 0;
+      padding: 2rem 2rem;
     }
   }
 `;
 
 const PostGrid = styled.div`
-  margin: 10rem auto;
+  margin: 5rem auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-template-rows: auto;
   grid-gap: 2rem;
-  padding: 0 4rem;
+  //padding: 0 4rem;
   @media (max-width: 768px) {
+    padding: 1rem;
     height: auto;
     width: 100%;
   }

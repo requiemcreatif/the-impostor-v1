@@ -29,7 +29,7 @@ const PostGrid = styled.div`
     //font-style: italic;
     //border: #000 solid 1px;
     border-radius: 5px;
-    padding: 3rem;
+    //padding: 3rem;
 
     @media (max-width: 768px) {
       font-size: 1.2em;
