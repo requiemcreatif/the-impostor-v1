@@ -17,6 +17,12 @@ const Form = styled.form`
   //border: 1px solid #ccc;
   border-radius: 1rem;
   box-shadow: 0 0 0.5rem #ccc;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 2rem auto 0 auto;
+    //height: 60rem;
+  }
   h2 {
     text-align: center;
     margin-bottom: 4rem;
