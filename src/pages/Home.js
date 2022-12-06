@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Sidecontent from "../components/Sidecontent";
+import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 import Description from "../components/Description";
@@ -23,6 +24,7 @@ const HomeDiv = styled.div`
 const Home = () => {
   return (
     <>
+      {/* <Menu /> */}
       <Navbar />
       <Sidecontent />
       <HomeDiv>

@@ -79,6 +79,8 @@ const Btn2 = styled.button`
     border: solid 1px #e63946;
     color: #e0f4ff;
     font-weight: 300;
+    transition: all 0.3s ease-in-out;
+    scale: 1.1;
   }
 `;
 
