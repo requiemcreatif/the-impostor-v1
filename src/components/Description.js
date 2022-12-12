@@ -124,7 +124,7 @@ const Description = () => {
             </p>
           </SectionWrapper>
         </SectionTwo>
-        <button onClick={removeModal}>Open Modal</button>
+        <button onClick={removeModal}>Read More</button>
       </Wrapper>
     </div>
   );

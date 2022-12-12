@@ -7,10 +7,11 @@ import Footer from "../components/Footer";
 //import { motion } from 'framer-motion/dist/framer-motion'
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { pageAnimation } from "../components/animation";
 
 const Form = styled.form`
   //background: white;
-  margin: 10rem auto;
+  margin: 24.5rem auto;
   width: 40rem;
   height: 62rem;
   padding: 4rem;
@@ -65,7 +66,8 @@ const Btn1 = styled.button`
   width: 100%;
   height: 5rem;
   padding: 0.5rem 1rem;
-  border: solid 1px #495867;
+  border: none;
+  //border: solid 1px #495867;
   border-radius: 0.5rem;
   background: #495867;
   color: white;
@@ -75,7 +77,8 @@ const Btn1 = styled.button`
   &:hover {
     background: #577399;
     color: #101b21;
-    border: #577399 solid 1px;
+    boder: none;
+    //border: #577399 solid 1px;
   }
 `;
 
@@ -92,7 +95,7 @@ const Signup = () => {
   }
 
   return (
-    <div>
+    <motion.div exit="exit" variants={pageAnimation} initial="hidden" animate="show">
       <Navbar />
       <Sidecontent />
       <Form onSubmit={handleSubmit}>
@@ -147,7 +150,7 @@ const Signup = () => {
         </p>
       </Form>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

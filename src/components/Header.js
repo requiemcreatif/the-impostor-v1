@@ -11,6 +11,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const HeaderStyled = styled.section`
+  margin: 4rem auto;
   max-width: 1100px;
   color: #011627;
   padding: 1rem 0 1rem 0;

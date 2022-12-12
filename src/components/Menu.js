@@ -1,36 +1,37 @@
 import React from "react";
+import Navbar from "./Navbar";
+import Sidecontent from "./Sidecontent";
+
+import styled from "styled-components";
+
+const MenuDiv = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 0.9;
+  clip-path: circle(50px at 100% 10%);
+  -webkit-clip-path: circle(50px at 100% 10%);
+
+  transition: all 0.5s ease-in-out;
+`;
 
 const Menu = () => {
+  const [menu, setMenu] = React.useState(false);
+
+  const handleMenu = () => {
+    setMenu(!menu);
+
+    console.log("menu");
+  };
   return (
-    <div>
-      <input type="checkbox" id="active" />
-      <label for="active" class="menu-btn">
-        <i class="fas fa-bars"></i>
-      </label>
-      <div class="wrapper">
-        <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <a href="#">Gallery</a>
-          </li>
-          <li>
-            <a href="#">Feedback</a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <div class="title">Fullscreen Overlay Navigation Bar</div>
-        <p>with HTML & CSS Neon Effect</p>
-      </div>
-    </div>
+    <MenuDiv onClick={handleMenu}>
+      <h1>Menu</h1>
+      <p></p>
+    </MenuDiv>
   );
 };
 

@@ -6,6 +6,8 @@ import Footer from "../components/Footer";
 import styled from "styled-components";
 import Description from "../components/Description";
 import Navbar from "../components/Navbar";
+import { pageAnimation } from "../components/animation";
+import { motion } from "framer-motion";
 
 const HomeDiv = styled.div`
   display: flex;
@@ -23,16 +25,19 @@ const HomeDiv = styled.div`
 
 const Home = () => {
   return (
-    <>
-      {/* <Menu /> */}
+    <div>
+      {/* <motion.div exit="exit" variants={pageAnimation} initial="hidden" animate="show"> */}
       <Navbar />
+      {/* <Menu /> */}
       <Sidecontent />
+
       <HomeDiv>
         <Header />
         <Description />
       </HomeDiv>
       <Footer />
-    </>
+      {/* </motion.div> */}
+    </div>
   );
 };
 

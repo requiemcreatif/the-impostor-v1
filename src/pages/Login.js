@@ -1,17 +1,17 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
 import Navbar from "../components/Navbar";
 import Sidecontent from "../components/Sidecontent";
 import Footer from "../components/Footer";
-//import { motion } from 'framer-motion/dist/framer-motion'
+import { pageAnimation } from "../components/animation";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const Form = styled.form`
   //background: white;
-  margin: 10rem auto;
+  margin: 24.5rem auto;
   width: 40rem;
   height: 62rem;
   padding: 4rem;
@@ -62,7 +62,8 @@ const Btn1 = styled.button`
   width: 100%;
   height: 5rem;
   padding: 0.5rem 1rem;
-  border: solid 1px #053651;
+  border: none;
+  //border: solid 1px #053651;
   border-radius: 0.5rem;
   background: #495867;
   color: white;
@@ -75,6 +76,8 @@ const Btn1 = styled.button`
     border: #577399 solid 1px;
   }
 `;
+
+const Div = styled(motion.div)``;
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -90,7 +93,7 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <Div exit="exit" variants={pageAnimation} initial="hidden" animate="show">
       <Navbar />
       <Sidecontent />
       <Form onSubmit={handleSubmit}>
@@ -130,7 +133,7 @@ const Login = () => {
         {error && <p>{error}</p>}
       </Form>
       <Footer />
-    </div>
+    </Div>
   );
 };
 

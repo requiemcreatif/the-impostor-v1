@@ -8,10 +8,10 @@ const BackdropOver = styled.div`
   width: 100%;
   height: 100%;
   background-color: #053651;
+  transition: all 0.3s ease-in-out;
   opacity: 0.5;
   //background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
-  //transition: all 0.3s ease-in-out;
 `;
 
 const Backdrop = ({ onClick }) => {

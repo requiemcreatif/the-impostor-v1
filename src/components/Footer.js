@@ -2,15 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import Music from "./Music";
 
-const TopFooter = styled.div`
-  background: #495867;
+const Wrapper = styled.div`
+  background: #053651;
   padding: 2rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   color: #e0f4ff;
-  gap: 2rem;
 
   @media (max-width: 768px) {
     padding: 5rem 2rem;
@@ -18,15 +14,14 @@ const TopFooter = styled.div`
 `;
 
 const FormContainer = styled.div`
+  margin: 0 auto;
   background-color: #053651;
-  //width: 100%;
-  padding: 0 2rem;
-  padding: 5rem 0;
-  display: flex;
-  flex-direction: column;
+  max-width: 1200px;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
   color: #e0f4ff;
 
   h2 {
@@ -36,13 +31,13 @@ const FormContainer = styled.div`
   p {
     font-size: 1.5rem;
     font-weight: 300;
-    padding-top: 7rem;
-    //padding-bottom: 2rem;
   }
   /* desktop media */
   @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 4rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+
     //padding: 0 1rem;
     //max-width: 400px;
   }
@@ -57,30 +52,45 @@ const FormContainer = styled.div`
       outline: none;
       color: #e0f4ff;
     }
-    /* MOBILE VERSION */
-    @media (max-width: 768px) {
-      gap: 2rem;
-      flex-direction: column;
 
-      button {
-        width: 100%;
-      }
-    }
     input {
       border: none;
-      border-bottom: #e0f4ff solid 1px;
+      border: #e0f4ff solid 1px;
+      border-radius: 0.3rem;
       background: transparent;
       padding: 1rem 1rem;
       margin-top: 20px;
       width: 35rem;
     }
 
-    input::placeholder {
-      padding: 1rem 0;
-      color: #e0f4ff;
-      border: none;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      input {
+        width: 100%;
+        margin-top: 0;
+      }
     }
   }
+`;
+
+const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  p {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+`;
+
+const Copyrights = styled.div`
+  width: 100%;
+  background: #101b21;
+  padding: 2rem 0;
+  text-align: center;
+  color: #e0f4ff;
 `;
 
 const Btn = styled.button`
@@ -99,6 +109,11 @@ const Btn = styled.button`
     background: #e63946;
     color: #e0f4ff;
   }
+
+  @media (max-width: 768px) {
+    margin: 2rem;
+    width: 100%;
+  }
 `;
 
 const Footer = () => {
@@ -109,19 +124,23 @@ const Footer = () => {
 
   return (
     <>
-      <TopFooter>
-        <p>Patrick Watson - Je te laisserai des mots</p>
-        <Music />
-      </TopFooter>
-      <FormContainer>
-        <h2>Subscribe to our newsletter.</h2>
-        {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> */}
-        <form onSubmit={HandleSubmit}>
-          <input type="text" placeholder="Enter your email" />
-          <Btn>Subscribe</Btn>
-        </form>
-        <p>Impostr 2022. All rights reserved</p>
-      </FormContainer>
+      <Wrapper>
+        <FormContainer>
+          <Div>
+            <p>Patrick Watson - Je te laisserai des mots</p>
+            <Music />
+          </Div>
+
+          {/* <h2>Subscribe to the weekly power email.</h2> */}
+          <form onSubmit={HandleSubmit}>
+            <input type="text" placeholder="Enter your email" />
+            <Btn>Subscribe</Btn>
+          </form>
+        </FormContainer>
+      </Wrapper>
+      <Copyrights>
+        <p>© 2022 Impostr. All rights reserved</p>
+      </Copyrights>
     </>
   );
 };

@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // STYLES
+const DivContainer = styled.div`
+  padding: 2rem;
+`;
 
 const Container = styled.div`
   //text-align: center;
@@ -86,7 +89,7 @@ const Btn2 = styled.button`
 
 const PostList = ({ posts }) => {
   return (
-    <div>
+    <DivContainer>
       <Container>
         <p className="textarea">
           Welcome to Imsptr community!! Here you will find all the information you need about
@@ -96,21 +99,22 @@ const PostList = ({ posts }) => {
         </p>
       </Container>
       <PostGrid>
-        {posts.length === 0 && <p>There is no posts at this moment</p>}
-        {posts.map((post) => (
-          <Link to={`/posts/${post.id}`} key={post.id}>
-            <CardContent>
-              <div>
-                <img src="" alt="" />
-              </div>
-              <h2>{post.name}</h2>
-              <p>Date: {post.date.toDate().toDateString()}</p>
-              <Btn2>Read more</Btn2>
-            </CardContent>
-          </Link>
-        ))}
+        {posts && posts.length === 0 && <p>There is no posts at this moment</p>}
+        {posts &&
+          posts.map((post) => (
+            <Link to={`/posts/${post.id}`} key={post.id}>
+              <CardContent>
+                <div>
+                  <img src="" alt="" />
+                </div>
+                <h2>{post.name}</h2>
+                <p>Date: {post.date.toDate().toDateString()}</p>
+                <Btn2>Read more</Btn2>
+              </CardContent>
+            </Link>
+          ))}
       </PostGrid>
-    </div>
+    </DivContainer>
   );
 };
 

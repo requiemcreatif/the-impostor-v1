@@ -21,6 +21,8 @@ const Music = () => {
         loop={true}
         controls
         volume={0.1}
+        //change backgroun color
+        style={{ backgroundColor: "#053651" }}
       />
     </div>
   );

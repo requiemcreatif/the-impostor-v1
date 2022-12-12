@@ -15,6 +15,7 @@ const BackdropOver = styled.div`
   max-height: auto;
   z-index: 100;
 
+  opacity: 1;
   h1 {
     font-size: 3em;
     font-weight: 600;

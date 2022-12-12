@@ -9,10 +9,12 @@ import Navbar from "../components/Navbar";
 import Sidecontent from "../components/Sidecontent";
 import Footer from "../components/Footer";
 import styled from "styled-components";
+import { pageAnimation } from "../components/animation";
+import { motion } from "framer-motion";
 
 // STYLES
 const DivTitle = styled.div`
-  margin: 0 auto;
+  margin: 9rem auto;
   padding: 2rem 8rem;
   text-align: center;
 
@@ -113,6 +115,7 @@ const categories = [
   { value: "Help", label: "Help" },
   { value: "Information", label: "Information" },
   { value: "Advice", label: "Advice" },
+  { value: "Testimonial", label: "Testimonial" },
 ];
 
 // FUNCTION COMPONENT START
@@ -120,8 +123,8 @@ const categories = [
 const Createpost = () => {
   const navigate = useNavigate();
   const { addDocument, response } = useFirestore("posts");
-  const { document } = useCollection("users");
-  const [users, setUsers] = useState([]);
+  //const { document } = useCollection("users");
+  //const [users, setUsers] = useState([]);
   const { user } = useAuthContext();
 
   const [name, setName] = useState("");
@@ -129,20 +132,22 @@ const Createpost = () => {
   const [date, setDate] = useState("");
   const [category, setCategory] = useState("");
   //const [link, setLink] = useState("");
+  //const [postByList, setPostByList] = useState([]);
   const [errorForm, setErrorForm] = useState(null);
 
-  useEffect(() => {
-    if (document) {
-      const options = document.map((user) => {
-        return { value: user, label: user.displayName };
-      });
-      setUsers(options);
-    }
-  }, [document]);
+  // useEffect(() => {
+  //   if (document) {
+  //     const options = document.map((user) => {
+  //       return { value: user, label: user.displayName };
+  //     });
+  //     setUsers(options);
+  //   }
+  // }, [document]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorForm(null);
+    console.log("category", category, "name", name, "details", details);
     if (!category) {
       setErrorForm("You need to select a post category");
       return;
@@ -170,7 +175,7 @@ const Createpost = () => {
   };
 
   return (
-    <div>
+    <motion.div variants={pageAnimation} initial="hidden" animate="show">
       <Navbar />
       <Sidecontent />
       <Container>
@@ -205,7 +210,7 @@ const Createpost = () => {
                 </label>
                 <label>
                   <span>Category:</span>
-                  <Select onChange={(option) => setCategory(option)} options={categories} />
+                  <Select onChange={(option) => setCategory(option)} options={categories} isMulti />
                 </label>
               </div>
               {/* POST TEXTAREA FIELD */}
@@ -221,6 +226,10 @@ const Createpost = () => {
                     onChange={(e) => setDetails(e.target.value)}
                     value={details}></textarea>
                 </label>
+                {/* <label>
+                  <span>Post by:</span>
+                  <Select onChange={(option) => setPostByList(option)} options={users} />
+                </label> */}
               </div>
             </PostFormLayout>
             <div>
@@ -231,7 +240,7 @@ const Createpost = () => {
         </Div>
       </Container>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 
